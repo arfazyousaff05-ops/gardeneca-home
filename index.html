@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gardeneca Home – Plants, Pots &amp; Fertilizers</title>
+<style>
+:root{--mint:#e8f3ec;--sage:#cfe6d7;--green:#2f7a55;--pink:#d93f9a;--ink:#26332c;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia,'Segoe UI',sans-serif;background:var(--white);color:var(--ink);line-height:1.6}
+header{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);display:flex;justify-content:space-between;align-items:center;padding:14px 6%;box-shadow:0 2px 12px rgba(0,0,0,.06);z-index:10}
+.brand{font-size:1.4rem;font-weight:bold;color:var(--green)}.brand span{color:var(--pink)}
+nav a{margin-left:22px;text-decoration:none;color:var(--ink);font-family:'Segoe UI',sans-serif;font-size:.95rem}
+nav a:hover{color:var(--pink)}
+.hero{background:linear-gradient(135deg,var(--mint),var(--sage));padding:90px 6%;text-align:center}
+.hero h1{font-size:2.6rem;color:var(--green);margin-bottom:12px}
+.hero p{max-width:560px;margin:0 auto 26px;font-size:1.1rem}
+.btn{display:inline-block;background:var(--green);color:#fff;padding:12px 28px;border-radius:30px;text-decoration:none;border:none;cursor:pointer;font-size:1rem;transition:.25s}
+.btn:hover{background:var(--pink);transform:translateY(-2px)}
+section{padding:60px 6%}
+h2{text-align:center;color:var(--green);margin-bottom:26px;font-size:1.9rem}
+.tools{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:30px}
+.tools input{padding:10px 18px;border:1px solid var(--sage);border-radius:30px;min-width:240px;font-size:1rem}
+.chip{padding:9px 20px;border-radius:30px;border:1px solid var(--sage);background:#fff;cursor:pointer;font-size:.95rem;transition:.2s}
+.chip.active,.chip:hover{background:var(--green);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:24px}
+.card{background:#fff;border:1px solid var(--sage);border-radius:18px;overflow:hidden;cursor:pointer;transition:.3s;animation:fade .6s ease both}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 26px rgba(47,122,85,.18)}
+.thumb{height:170px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:var(--mint)}
+.info{padding:16px}.info h3{font-size:1.05rem;margin-bottom:4px}
+.price{color:var(--pink);font-weight:bold}
+.badge{display:inline-block;font-size:.75rem;padding:3px 10px;border-radius:20px;margin-top:6px}
+.in{background:#d8f0e0;color:#1d6b43}.out{background:#fde0e0;color:#a33}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+.modal.show{display:flex}
+.box{background:#fff;border-radius:22px;max-width:440px;width:100%;overflow:hidden;animation:fade .3s ease}
+.box .thumb{height:200px;font-size:5.5rem}
+.box .body{padding:22px}.box p{margin:10px 0}
+.close{float:right;font-size:1.6rem;cursor:pointer;padding:8px 16px}
+.videos{background:var(--mint)}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;max-width:800px;margin:0 auto 24px}
+.vbox{background:#fff;border-radius:16px;padding:40px 10px;text-align:center;font-size:2.2rem}
+.about{max-width:700px;margin:0 auto;text-align:center}
+footer{background:var(--green);color:#fff;text-align:center;padding:26px}
+.wa{position:fixed;right:20px;bottom:20px;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;text-decoration:none;box-shadow:0 6px 16px rgba(0,0,0,.25);z-index:20}
+@media(max-width:600px){header{align-items:flex-start;gap:10px;flex-direction:column}nav{display:flex;flex-wrap:wrap;gap:8px 16px}nav a{margin:0}.hero{padding:64px 6%}.hero h1{font-size:2.1rem}section{padding:46px 6%}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><span>G</span>ardeneca Home</div>
+<nav aria-label="Main navigation"><a href="#shop">Shop</a><a href="#videos">Videos</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+</header>
+
+<main>
+<div class="hero">
+<h1>Bring the garden home</h1>
+<p>Healthy plants, beautiful pots and trusted fertilizers, grown with love.</p>
+<a class="btn" href="#shop">Shop now</a>
+</div>
+
+<section id="shop">
+<h2>Our Collection</h2>
+<div class="tools">
+<input id="search" type="search" aria-label="Search products" placeholder="Search plants, pots, fertilizers...">
+</div>
+<div class="tools" id="chips" aria-label="Filter products by category"></div>
+<div class="grid" id="grid" aria-live="polite"></div>
+</section>
+
+<section class="videos" id="videos">
+<h2>From Our Garden</h2>
+<div class="vgrid"><div class="vbox" aria-label="Plant">🌿</div><div class="vbox" aria-label="Flower">🌸</div><div class="vbox" aria-label="Potted plant">🪴</div></div>
+<p style="text-align:center"><a class="btn" target="_blank" rel="noopener noreferrer" href="https://instagram.com/YOUR_INSTAGRAM_HANDLE">Watch on Instagram</a></p>
+</section>
+
+<section id="about">
+<h2>About Us</h2>
+<p class="about">Gardeneca Home started in our own family garden. Today we share the plants we love, along with the pots and fertilizers to help them thrive.</p>
+</section>
+</main>
+
+<footer id="contact">
+<p>Gardeneca Home · WhatsApp: +91 75102 21577 · Email: naturegardeneca@gmail.com · Instagram: @YOUR_INSTAGRAM_HANDLE</p>
+</footer>
+
+<a class="wa" target="_blank" rel="noopener noreferrer" aria-label="Chat with Gardeneca Home on WhatsApp" href="https://wa.me/917510221577">💬</a>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Product details"><div class="box" id="box"></div></div>
+
+<script>
+const WHATSAPP="917510221577"; // country code + number, no plus sign
+const products=[
+{id:1,name:"Adenium (Desert Rose)",cat:"Plants",price:350,stock:true,icon:"🌺",care:"Bright sun, water only when soil is dry."},
+{id:2,name:"Money Plant",cat:"Plants",price:120,stock:true,icon:"🌿",care:"Indirect light, water once a week."},
+{id:3,name:"Snake Plant",cat:"Plants",price:250,stock:false,icon:"🪴",care:"Very low maintenance, water every 2 weeks."},
+{id:4,name:"Ceramic Pot – White",cat:"Pots",price:299,stock:true,icon:"🏺",care:"Has drainage hole. Medium size."},
+{id:5,name:"Hanging Planter",cat:"Pots",price:180,stock:true,icon:"🧺",care:"Comes with rope and hook."},
+{id:6,name:"Organic Compost 1kg",cat:"Fertilizers",price:90,stock:true,icon:"🌱",care:"Mix a handful into soil every month."},
+{id:7,name:"Bloom Booster",cat:"Fertilizers",price:160,stock:true,icon:"💐",care:"Dilute as per label, use every 2 weeks."}
+];
+let cat="All",q="";
+const grid=document.getElementById('grid'),chips=document.getElementById('chips');
+function renderChips(){chips.innerHTML="";["All","Plants","Pots","Fertilizers"].forEach(c=>{const b=document.createElement('button');b.type='button';b.className='chip'+(c===cat?' active':'');b.textContent=c;b.setAttribute('aria-pressed',String(c===cat));b.onclick=()=>{cat=c;renderChips();render()};chips.appendChild(b)})}
+function render(){grid.innerHTML="";const matches=products.filter(p=>(cat==="All"||p.cat===cat)&&p.name.toLowerCase().includes(q));if(!matches.length){grid.innerHTML='<p style="grid-column:1/-1;text-align:center">No products found. Try a different search.</p>';return}matches.forEach(p=>{const d=document.createElement('div');d.className='card';d.tabIndex=0;d.setAttribute('role','button');d.setAttribute('aria-label',`View ${p.name} details`);d.innerHTML=`<div class="thumb">${p.icon}</div><div class="info"><h3>${p.name}</h3><div class="price">₹${p.price}</div><span class="badge ${p.stock?'in':'out'}">${p.stock?'In stock':'Out of stock'}</span></div>`;d.onclick=()=>openModal(p);d.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(p)}};grid.appendChild(d)})}
+function openModal(p){const msg=encodeURIComponent(`Hi Gardeneca Home, I would like to order: ${p.name} (₹${p.price})`);document.getElementById('box').innerHTML=`<span class="close" role="button" tabindex="0" aria-label="Close product details" onclick="closeModal()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();closeModal()}">×</span><div class="thumb">${p.icon}</div><div class="body"><h3>${p.name}</h3><p class="price">₹${p.price}</p><p><b>Care:</b> ${p.care}</p><span class="badge ${p.stock?'in':'out'}">${p.stock?'In stock':'Out of stock'}</span><p style="margin-top:16px">${p.stock?`<a class="btn" target="_blank" rel="noopener noreferrer" href="https://wa.me/${WHATSAPP}?text=${msg}">Order on WhatsApp</a>`:'Currently unavailable'}</p></div>`;document.getElementById('modal').classList.add('show');document.querySelector('.close').focus()}
+function closeModal(){document.getElementById('modal').classList.remove('show')}
+document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')closeModal()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+document.getElementById('search').oninput=e=>{q=e.target.value.toLowerCase().trim();render()};
+renderChips();render();
+</script>
+</body>
+</html>
