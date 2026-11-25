@@ -3,388 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#173f32">
+  <meta name="theme-color" content="#17382d">
   <meta name="description" content="Healthy plants, beautiful pots and trusted garden essentials from Gardeneca Home. Explore our family garden collection and order on WhatsApp.">
-  <title>Gardeneca Home | Plants, Pots & Garden Essentials</title>
+  <title>Gardeneca Home | Plants, Pots &amp; Garden Essentials</title>
   <style>
-    :root {
-      color-scheme: light;
-      --green: #214f3d;
-      --green-deep: #17382d;
-      --green-soft: #e8eee4;
-      --sage: #dce5d5;
-      --cream: #f8f6f0;
-      --paper: #fffefa;
-      --ink: #1e2d27;
-      --muted: #68766d;
-      --line: #e4e6dc;
-      --clay: #b86b49;
-      --shadow: 0 18px 48px rgba(27, 55, 42, .10);
-      --radius: 22px;
-      font-family: "Segoe UI", Arial, sans-serif;
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-    body { margin: 0; background: var(--cream); color: var(--ink); line-height: 1.6; }
-    button, input, select { font: inherit; }
-    a { color: inherit; }
-    .container { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
-    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(248,246,240,.94); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(33,79,61,.10); }
-    .header-inner { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
-    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; flex: 0 0 auto; }
-    .brand-mark { width: 43px; height: 43px; display: grid; place-items: center; border-radius: 50%; color: var(--paper); background: var(--green); }
-    .brand-mark svg { width: 22px; height: 22px; }
-    .brand-name { display: block; font-family: Georgia, serif; font-size: 1.48rem; line-height: 1.1; color: var(--green-deep); }
-    .brand-sub { display: block; margin-top: 3px; color: var(--muted); font-size: .68rem; letter-spacing: .29em; text-transform: uppercase; }
-    .main-nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 42px); }
-    .main-nav a { text-decoration: none; font-size: .94rem; font-weight: 600; color: #38463f; transition: color .2s; }
-    .main-nav a:hover { color: var(--clay); }
-    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 23px; border: 1px solid var(--green); border-radius: 999px; background: var(--green); color: white; text-decoration: none; font-weight: 700; transition: transform .2s, background .2s, box-shadow .2s; cursor: pointer; }
-    .button:hover { transform: translateY(-2px); background: var(--green-deep); box-shadow: 0 8px 18px rgba(23,56,45,.16); }
-    .button-outline { background: transparent; color: var(--green); }
-    .button-outline:hover { color: white; }
-    .menu-toggle { display: none; border: 1px solid var(--line); background: var(--paper); color: var(--green); border-radius: 12px; width: 44px; height: 44px; cursor: pointer; }
-
-    .hero { overflow: hidden; padding: 68px 0 76px; background: radial-gradient(ellipse at 2% 5%, rgba(220,229,213,.62), transparent 40%), var(--cream); }
-    .hero-layout { display: grid; grid-template-columns: 1.03fr .97fr; align-items: center; gap: clamp(38px, 7vw, 94px); }
-    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--green); font-size: .75rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
-    .eyebrow::before { content: ""; width: 24px; height: 1px; background: var(--clay); }
-    h1, h2, h3, p { margin-top: 0; }
-    .hero h1 { max-width: 670px; margin: 16px 0 19px; color: var(--green-deep); font: 500 clamp(3.2rem, 6vw, 5.55rem)/.99 Georgia, serif; letter-spacing: -.055em; }
-    .hero h1 em { color: var(--clay); font-weight: 400; }
-    .hero-copy { max-width: 510px; margin-bottom: 27px; color: #68766d; font-size: clamp(1.05rem, 1.5vw, 1.22rem); line-height: 1.75; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .hero-stats { display: flex; max-width: 520px; margin-top: 46px; border-top: 1px solid #d8d9cf; }
-    .stat { flex: 1; padding: 16px 20px 2px 0; }
-    .stat + .stat { padding-left: 22px; border-left: 1px solid #d8d9cf; }
-    .stat-number { display: block; color: var(--green-deep); font: 2rem Georgia, serif; }
-    .stat-label { color: var(--muted); font-size: .84rem; }
-    .hero-art-wrap { position: relative; min-height: 440px; display: grid; place-items: center; }
-    .hero-art { position: relative; width: min(100%, 440px); height: 420px; overflow: hidden; border-radius: 230px 230px 22px 22px; background: linear-gradient(155deg, #315c49, #17382d 75%); box-shadow: var(--shadow); }
-    .hero-art::before { content: ""; position: absolute; inset: 18px; border: 1px solid rgba(248,246,240,.23); border-radius: 220px 220px 8px 8px; }
-    .sun { position: absolute; top: 52px; right: 58px; width: 120px; aspect-ratio: 1; border-radius: 50%; background: #bd744f; opacity: .96; }
-    .hero-plant { position: absolute; z-index: 1; width: 78%; height: 74%; left: 11%; bottom: 5%; }
-    .garden-note { position: absolute; z-index: 2; left: -42px; bottom: 42px; display: flex; align-items: center; gap: 13px; padding: 16px 21px; border: 1px solid rgba(33,79,61,.10); border-radius: 18px; background: var(--paper); box-shadow: var(--shadow); }
-    .note-icon { width: 43px; height: 43px; display: grid; place-items: center; border-radius: 50%; background: var(--green-soft); color: var(--green); }
-    .garden-note strong { display: block; font: 1.05rem Georgia, serif; color: var(--green-deep); }
-    .garden-note span { color: var(--muted); font-size: .82rem; }
-
-    .shop-section { padding: 82px 0 92px; background: var(--paper); }
-    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
-    .section-heading h2 { margin: 8px 0 7px; color: var(--green-deep); font: 500 clamp(2.2rem, 4vw, 3.2rem)/1.1 Georgia, serif; letter-spacing: -.035em; }
-    .section-heading p { max-width: 500px; margin: 0; color: var(--muted); }
-    .catalog-controls { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 27px; }
-    .filters { display: flex; flex-wrap: wrap; gap: 9px; }
-    .filter-chip { min-height: 42px; padding: 0 17px; border: 1px solid #dfe3d9; border-radius: 999px; background: transparent; color: #45554b; cursor: pointer; transition: .2s; }
-    .filter-chip:hover, .filter-chip.active { border-color: var(--green); background: var(--green); color: white; }
-    .filter-chip small { margin-left: 5px; opacity: .72; }
-    .catalog-tools { display: flex; gap: 10px; }
-    .search-wrap { position: relative; }
-    .search-wrap svg { position: absolute; left: 14px; top: 50%; width: 17px; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
-    .search-input, .sort-select { min-height: 44px; border: 1px solid #dfe3d9; border-radius: 12px; background: white; color: var(--ink); outline: none; }
-    .search-input { width: 220px; padding: 0 14px 0 41px; }
-    .sort-select { padding: 0 35px 0 12px; }
-    .search-input:focus, .sort-select:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(33,79,61,.10); }
-    .result-line { margin: 0 0 16px; color: var(--muted); font-size: .88rem; }
-    .product-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 30px 22px; }
-    .product-card { min-width: 0; cursor: pointer; }
-    .product-image { position: relative; display: grid; place-items: center; aspect-ratio: 1.08 / 1; overflow: hidden; border-radius: var(--radius); background: var(--sage); transition: transform .25s, box-shadow .25s; }
-    .product-card:hover .product-image { transform: translateY(-4px); box-shadow: var(--shadow); }
-    .product-image.tone-clay { background: #efddce; }
-    .product-image.tone-sand { background: #e9e3d3; }
-    .product-image svg { width: 65%; height: 65%; overflow: visible; }
-    .category-label { position: absolute; top: 16px; left: 16px; padding: 6px 12px; border-radius: 999px; background: rgba(255,254,250,.83); color: var(--green-deep); font-size: .67rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-    .stock-label { position: absolute; top: 16px; right: 16px; padding: 6px 10px; border-radius: 999px; background: rgba(255,254,250,.88); color: var(--green); font-size: .7rem; font-weight: 700; }
-    .stock-label.unavailable { color: #a64e38; }
-    .product-info { padding: 14px 5px 0; }
-    .product-title-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
-    .product-title { margin: 0; color: #26372e; font: 500 clamp(1.12rem, 1.7vw, 1.42rem)/1.25 Georgia, serif; }
-    .product-price { flex: 0 0 auto; color: var(--green); font-size: 1rem; font-weight: 800; }
-    .product-status { display: flex; align-items: center; gap: 8px; margin: 7px 0 0; color: var(--muted); font-size: .84rem; }
-    .status-dot { width: 9px; height: 9px; flex: 0 0 auto; border-radius: 50%; background: #548b60; box-shadow: 0 0 0 4px #e6eee3; }
-    .product-status.unavailable .status-dot { background: #bd684d; box-shadow: 0 0 0 4px #f4e3da; }
-    .empty-state { grid-column: 1/-1; padding: 58px 20px; border: 1px dashed #ccd5c9; border-radius: var(--radius); text-align: center; color: var(--muted); }
-    .empty-state strong { display: block; margin-bottom: 6px; color: var(--green-deep); font: 1.4rem Georgia,serif; }
-
-    .promise-section { padding: 76px 0; background: var(--green-deep); color: #f8f6f0; }
-    .promise-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 60px; align-items: center; }
-    .promise-section .eyebrow { color: #d5e0d3; }
-    .promise-section h2 { max-width: 430px; margin: 13px 0 13px; font: 500 clamp(2.2rem, 4vw, 3.3rem)/1.08 Georgia,serif; letter-spacing: -.03em; }
-    .promise-section p { max-width: 440px; margin-bottom: 0; color: #c4d0c8; }
-    .promise-list { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-    .promise-item { min-height: 145px; padding: 22px 18px; border: 1px solid rgba(255,255,255,.16); border-radius: 18px; background: rgba(255,255,255,.045); }
-    .promise-item svg { width: 25px; height: 25px; margin-bottom: 14px; color: #d8a17e; }
-    .promise-item strong { display: block; font-size: .94rem; }
-    .promise-item span { display: block; margin-top: 5px; color: #c4d0c8; font-size: .78rem; line-height: 1.5; }
-    .about-section { padding: 80px 0; background: var(--cream); }
-    .about-card { display: grid; grid-template-columns: .75fr 1.25fr; gap: 50px; align-items: center; max-width: 900px; margin: 0 auto; }
-    .about-emblem { display: grid; place-items: center; min-height: 210px; border-radius: var(--radius); background: var(--green-soft); color: var(--green); }
-    .about-emblem svg { width: 94px; height: 94px; }
-    .about-copy h2 { margin: 10px 0 12px; color: var(--green-deep); font: 500 2.45rem/1.1 Georgia,serif; }
-    .about-copy p { margin: 0; color: var(--muted); }
-    .site-footer { padding: 48px 0 22px; background: #142f26; color: #f7f4eb; }
-    .footer-main { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-bottom: 37px; }
-    .footer-brand .brand-name { color: #f7f4eb; }
-    .footer-brand .brand-sub { color: #aab8ad; }
-    .footer-tagline { max-width: 270px; margin: 20px 0 0; color: #bac5bd; }
-    .footer-heading { margin: 0 0 13px; color: #d99a76; font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-    .footer-links { display: grid; gap: 9px; }
-    .footer-links a { width: fit-content; color: #d2d9d3; text-decoration: none; }
-    .footer-links a:hover { color: white; }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 16px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.14); color: #aab8ad; font-size: .82rem; }
-    .footer-bottom p { margin: 0; }
-    .whatsapp-float { position: fixed; right: 22px; bottom: 22px; z-index: 15; width: 54px; height: 54px; display: grid; place-items: center; border-radius: 50%; background: #1f8d59; color: white; box-shadow: 0 8px 20px rgba(0,0,0,.2); text-decoration: none; transition: transform .2s; }
-    .whatsapp-float:hover { transform: translateY(-3px); }
-    .whatsapp-float svg { width: 25px; height: 25px; }
-
-    .modal { position: fixed; inset: 0; z-index: 40; display: none; align-items: center; justify-content: center; padding: 20px; background: rgba(13,31,24,.62); }
-    .modal.open { display: flex; }
-    .modal-card { position: relative; width: min(100%, 760px); display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; border-radius: 24px; background: var(--paper); box-shadow: 0 28px 90px rgba(0,0,0,.25); animation: modal-in .2s ease-out; }
-    @keyframes modal-in { from { opacity: 0; transform: translateY(10px) scale(.99); } to { opacity: 1; transform: none; } }
-    .modal-art { min-height: 370px; display: grid; place-items: center; background: var(--sage); }
-    .modal-art.tone-clay { background: #efddce; }.modal-art.tone-sand { background: #e9e3d3; }
-    .modal-art svg { width: 70%; height: 70%; }
-    .modal-content { align-self: center; padding: 42px 34px; }
-    .modal-close { position: absolute; top: 14px; right: 14px; z-index: 2; width: 40px; height: 40px; border: 0; border-radius: 50%; background: white; color: var(--green-deep); font-size: 1.4rem; cursor: pointer; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
-    .modal-category { color: var(--clay); font-size: .72rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
-    .modal-content h2 { margin: 9px 0; color: var(--green-deep); font: 500 2rem/1.15 Georgia,serif; }
-    .modal-price { margin: 0 0 18px; color: var(--green); font-size: 1.2rem; font-weight: 800; }
-    .modal-care { margin-bottom: 18px; color: var(--muted); }
-    .modal-content .button { width: 100%; }
-    :focus-visible { outline: 3px solid #bb805f; outline-offset: 3px; }
-
-    @media (max-width: 900px) {
-      .hero-layout { gap: 32px; }.hero-art-wrap { min-height: 370px; }.hero-art { height: 360px; }
-      .product-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-      .catalog-controls { align-items: flex-start; flex-direction: column; }
-      .promise-layout { grid-template-columns: 1fr; gap: 30px; }
-      .promise-list { max-width: 700px; }
-    }
-    @media (max-width: 680px) {
-      .container { width: min(100% - 34px, 540px); }
-      .header-inner { min-height: 70px; flex-wrap: wrap; gap: 10px; }
-      .brand-mark { width: 39px; height: 39px; }
-      .brand-name { font-size: 1.3rem; }
-      .menu-toggle { display: grid; place-items: center; margin-left: auto; }
-      .header-cta { display: none; }
-      .main-nav { display: none; order: 4; width: 100%; padding: 7px 0 16px; align-items: flex-start; flex-direction: column; gap: 14px; }
-      .main-nav.open { display: flex; }
-      .hero { padding: 54px 0 56px; }
-      .hero-layout { grid-template-columns: 1fr; }
-      .hero h1 { max-width: 580px; font-size: clamp(3.05rem, 14vw, 4.5rem); }
-      .hero-copy { font-size: 1.03rem; }
-      .hero-stats { margin-top: 34px; }
-      .stat { padding-right: 10px; }.stat + .stat { padding-left: 13px; }
-      .hero-art-wrap { min-height: 350px; margin: 2px 12px 0 30px; }
-      .hero-art { width: 100%; height: 335px; }
-      .garden-note { left: -28px; bottom: 24px; padding: 12px 15px; }
-      .shop-section { padding: 60px 0 68px; }
-      .section-heading { align-items: flex-start; flex-direction: column; gap: 7px; }
-      .section-heading h2 { font-size: 2.5rem; }
-      .catalog-tools { width: 100%; flex-direction: column; }
-      .search-wrap, .search-input, .sort-select { width: 100%; }
-      .product-grid { gap: 24px 13px; }
-      .product-image { border-radius: 17px; }
-      .category-label { top: 10px; left: 10px; padding: 5px 8px; font-size: .58rem; }
-      .stock-label { top: 10px; right: 8px; padding: 5px 7px; font-size: .61rem; }
-      .product-info { padding: 11px 2px 0; }
-      .product-title-row { align-items: flex-start; flex-direction: column; gap: 3px; }
-      .product-title { font-size: 1.12rem; }
-      .product-price { font-size: .95rem; }
-      .product-status { font-size: .77rem; }
-      .promise-section { padding: 58px 0; }
-      .promise-list { grid-template-columns: 1fr; }
-      .promise-item { min-height: 0; }
-      .promise-item svg { margin-bottom: 7px; }
-      .about-section { padding: 58px 0; }
-      .about-card { grid-template-columns: 1fr; gap: 24px; }
-      .about-emblem { min-height: 145px; }.about-emblem svg { width: 70px; height: 70px; }
-      .footer-main { grid-template-columns: 1fr 1fr; gap: 30px 20px; }
-      .footer-brand { grid-column: 1/-1; }
-      .footer-bottom { flex-direction: column; }
-      .modal-card { max-width: 440px; grid-template-columns: 1fr; max-height: min(90vh, 760px); overflow-y: auto; }
-      .modal-art { min-height: 230px; }
-      .modal-content { padding: 26px 24px 30px; }
-      .modal-content h2 { font-size: 1.7rem; }
-    }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+    :root{--green:#214f3d;--deep:#17382d;--soft:#e8eee4;--sage:#dce5d5;--cream:#f8f6f0;--paper:#fffefa;--ink:#1e2d27;--muted:#68766d;--line:#e4e6dc;--clay:#b86b49;--shadow:0 16px 40px rgba(27,55,42,.1);font-family:'Segoe UI',Arial,sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--cream);color:var(--ink);line-height:1.6}button,input,select{font:inherit}a{color:inherit}.container{width:min(1180px,calc(100% - 48px));margin:auto}
+    .site-header{position:sticky;top:0;z-index:20;background:rgba(248,246,240,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(33,79,61,.1)}.header-inner{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none}.brand-mark{width:43px;height:43px;display:grid;place-items:center;border-radius:50%;background:var(--green);color:white}.brand-mark svg{width:22px}.brand-name{display:block;font:1.45rem/1.1 Georgia,serif;color:var(--deep)}.brand-sub{display:block;margin-top:3px;color:var(--muted);font-size:.67rem;letter-spacing:.28em;text-transform:uppercase}.main-nav{display:flex;gap:clamp(18px,3vw,40px)}.main-nav a{text-decoration:none;font-size:.94rem;font-weight:600;color:#38463f}.main-nav a:hover,.footer-links a:hover{color:var(--clay)}.button{min-height:47px;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:0 22px;border:1px solid var(--green);border-radius:999px;background:var(--green);color:white;text-decoration:none;font-weight:700;cursor:pointer;transition:.2s}.button:hover{background:var(--deep);transform:translateY(-2px);box-shadow:0 7px 18px #17382d25}.button-outline{background:transparent;color:var(--green)}.button-outline:hover{color:white}.menu-toggle{display:none}
+    .hero{padding:66px 0 74px;background:radial-gradient(ellipse at 2% 5%,#dce5d599,transparent 40%),var(--cream);overflow:hidden}.hero-layout{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:6vw}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--green);font-size:.73rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.eyebrow:before{content:'';width:23px;height:1px;background:var(--clay)}h1,h2,h3,p{margin-top:0}.hero h1{max-width:660px;margin:16px 0;color:var(--deep);font:500 clamp(3.2rem,6vw,5.5rem)/.99 Georgia,serif;letter-spacing:-.05em}.hero h1 em{color:var(--clay);font-weight:400}.hero-copy{max-width:510px;margin-bottom:26px;color:var(--muted);font-size:1.15rem;line-height:1.75}.hero-actions{display:flex;flex-wrap:wrap;gap:12px}.hero-stats{display:flex;max-width:520px;margin-top:43px;border-top:1px solid #d8d9cf}.stat{flex:1;padding:15px 20px 0 0}.stat+.stat{padding-left:22px;border-left:1px solid #d8d9cf}.stat-number{display:block;color:var(--deep);font:2rem Georgia,serif}.stat-label{color:var(--muted);font-size:.84rem}.hero-art-wrap{position:relative;min-height:430px;display:grid;place-items:center}.hero-art{position:relative;width:min(100%,430px);height:410px;overflow:hidden;border-radius:220px 220px 20px 20px;background:linear-gradient(155deg,#315c49,var(--deep) 75%);box-shadow:var(--shadow)}.hero-art:before{content:'';position:absolute;inset:18px;border:1px solid #f8f6f044;border-radius:210px 210px 8px 8px}.sun{position:absolute;top:53px;right:58px;width:115px;aspect-ratio:1;border-radius:50%;background:#bd744f}.hero-plant{position:absolute;z-index:1;width:78%;height:75%;left:11%;bottom:4%}.garden-note{position:absolute;z-index:2;left:-38px;bottom:40px;display:flex;align-items:center;gap:13px;padding:15px 20px;border:1px solid #214f3d1a;border-radius:17px;background:var(--paper);box-shadow:var(--shadow)}.note-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:var(--soft);color:var(--green)}.garden-note strong{display:block;font:1.02rem Georgia,serif;color:var(--deep)}.garden-note span{color:var(--muted);font-size:.82rem}
+    .shop-section{padding:76px 0 88px;background:var(--paper)}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:30px}.section-heading h2{margin:8px 0 6px;color:var(--deep);font:500 clamp(2.2rem,4vw,3.1rem)/1.1 Georgia,serif;letter-spacing:-.03em}.section-heading p{max-width:480px;margin:0;color:var(--muted)}
+    /* Clear desktop catalog alignment: category navigation on the left, search/sort and products on one content column. */
+    .catalog-layout{display:grid;grid-template-columns:205px minmax(0,1fr);gap:34px;align-items:start}.category-panel{padding:20px 16px;border:1px solid var(--line);border-radius:18px;background:#fbfaf6}.category-title{margin:0 0 13px 5px;color:var(--muted);font-size:.7rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.category-list{display:grid;gap:5px}.category-button{width:100%;min-height:43px;display:flex;align-items:center;justify-content:space-between;padding:0 11px;border:0;border-radius:10px;background:transparent;color:#45554b;text-align:left;cursor:pointer;transition:background .18s,color .18s}.category-button:hover{background:var(--soft)}.category-button.active{background:var(--green);color:white;font-weight:700}.category-count{font-size:.78rem;opacity:.72}.catalog-main{min-width:0}.catalog-toolbar{display:grid;grid-template-columns:minmax(220px,1fr) auto;align-items:center;gap:16px;margin-bottom:14px}.search-wrap{position:relative}.search-wrap svg{position:absolute;top:50%;left:15px;width:18px;transform:translateY(-50%);color:var(--muted);pointer-events:none}.search-input,.sort-select{height:46px;border:1px solid #dfe3d9;border-radius:11px;background:white;color:var(--ink);outline:none}.search-input{width:100%;padding:0 15px 0 43px}.sort-wrap{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:.84rem;white-space:nowrap}.sort-select{min-width:175px;padding:0 34px 0 12px}.search-input:focus,.sort-select:focus{border-color:var(--green);box-shadow:0 0 0 3px #214f3d1a}.catalog-meta{display:flex;align-items:center;justify-content:space-between;min-height:36px;margin-bottom:12px;color:var(--muted);font-size:.84rem}.result-count{margin:0}.active-category{color:var(--deep);font-weight:700}.product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 20px}.product-card{min-width:0;cursor:pointer}.product-image{position:relative;display:grid;place-items:center;aspect-ratio:1/1;overflow:hidden;border-radius:18px;background:var(--sage);transition:transform .22s,box-shadow .22s}.product-card:hover .product-image{transform:translateY(-4px);box-shadow:var(--shadow)}.product-image.tone-clay,.modal-art.tone-clay{background:#efddce}.product-image.tone-sand,.modal-art.tone-sand{background:#e9e3d3}.product-image svg{width:67%;height:67%}.category-label,.stock-label{position:absolute;top:13px;padding:5px 9px;border-radius:999px;background:#fffefaeb;font-size:.64rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.category-label{left:13px;color:var(--deep)}.stock-label{right:11px;color:var(--green);letter-spacing:0;text-transform:none}.stock-label.unavailable{color:#a64e38}.product-info{padding:13px 3px 0}.product-title-row{display:flex;align-items:baseline;justify-content:space-between;gap:10px}.product-title{margin:0;color:#26372e;font:500 clamp(1.05rem,1.45vw,1.3rem)/1.25 Georgia,serif}.product-price{flex:0 0 auto;color:var(--green);font-size:.97rem;font-weight:800}.product-status{display:flex;align-items:center;gap:8px;margin:7px 0 0;color:var(--muted);font-size:.8rem}.status-dot{width:8px;height:8px;flex:0 0 auto;border-radius:50%;background:#548b60;box-shadow:0 0 0 4px #e6eee3}.product-status.unavailable .status-dot{background:#bd684d;box-shadow:0 0 0 4px #f4e3da}.empty-state{grid-column:1/-1;padding:54px 20px;border:1px dashed #ccd5c9;border-radius:18px;text-align:center;color:var(--muted)}.empty-state strong{display:block;color:var(--deep);font:1.35rem Georgia,serif}
+    .promise-section{padding:72px 0;background:var(--deep);color:#f8f6f0}.promise-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}.promise-section .eyebrow{color:#d5e0d3}.promise-section h2{max-width:430px;margin:13px 0;font:500 clamp(2.2rem,4vw,3.2rem)/1.08 Georgia,serif}.promise-section p{max-width:440px;margin:0;color:#c4d0c8}.promise-list{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.promise-item{min-height:142px;padding:20px 16px;border:1px solid #ffffff29;border-radius:17px;background:#ffffff0b}.promise-item svg{width:25px;height:25px;margin-bottom:12px;color:#d8a17e}.promise-item strong{display:block;font-size:.91rem}.promise-item span{display:block;margin-top:5px;color:#c4d0c8;font-size:.77rem;line-height:1.5}.about-section{padding:76px 0;background:var(--cream)}.about-card{display:grid;grid-template-columns:.75fr 1.25fr;gap:48px;align-items:center;max-width:900px;margin:auto}.about-emblem{min-height:200px;display:grid;place-items:center;border-radius:20px;background:var(--soft);color:var(--green)}.about-emblem svg{width:90px}.about-copy h2{margin:10px 0;color:var(--deep);font:500 2.4rem/1.1 Georgia,serif}.about-copy p{margin:0;color:var(--muted)}.site-footer{padding:45px 0 20px;background:#142f26;color:#f7f4eb}.footer-main{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:38px;padding-bottom:34px}.footer-brand .brand-name{color:#f7f4eb}.footer-brand .brand-sub{color:#aab8ad}.footer-tagline{max-width:270px;margin:18px 0 0;color:#bac5bd}.footer-heading{margin:0 0 12px;color:#d99a76;font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.footer-links{display:grid;gap:9px}.footer-links a{width:fit-content;color:#d2d9d3;text-decoration:none}.footer-bottom{display:flex;justify-content:space-between;gap:16px;padding-top:17px;border-top:1px solid #ffffff24;color:#aab8ad;font-size:.8rem}.footer-bottom p{margin:0}.whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:15;width:54px;height:54px;display:grid;place-items:center;border-radius:50%;background:#1f8d59;color:white;box-shadow:0 8px 20px #0003;text-decoration:none}.whatsapp-float svg{width:25px}
+    .modal{position:fixed;inset:0;z-index:40;display:none;align-items:center;justify-content:center;padding:20px;background:#0d1f189e}.modal.open{display:flex}.modal-card{position:relative;width:min(100%,740px);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;border-radius:23px;background:var(--paper);box-shadow:0 28px 90px #0004}.modal-art{min-height:350px;display:grid;place-items:center;background:var(--sage)}.modal-art svg{width:70%;height:70%}.modal-content{align-self:center;padding:40px 32px}.modal-close{position:absolute;top:13px;right:13px;z-index:2;width:40px;height:40px;border:0;border-radius:50%;background:white;color:var(--deep);font-size:1.4rem;cursor:pointer}.modal-category{color:var(--clay);font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.modal-content h2{margin:9px 0;color:var(--deep);font:500 2rem/1.15 Georgia,serif}.modal-price{margin:0 0 16px;color:var(--green);font-weight:800;font-size:1.16rem}.modal-care{color:var(--muted)}.modal-content .button{width:100%}:focus-visible{outline:3px solid #bb805f;outline-offset:3px}
+    @media(max-width:980px){.hero-layout{gap:30px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.promise-layout{grid-template-columns:1fr;gap:28px}.promise-list{max-width:720px}}
+    @media(max-width:700px){.container{width:min(100% - 34px,560px)}.header-inner{min-height:70px;flex-wrap:wrap;gap:10px}.brand-mark{width:39px;height:39px}.brand-name{font-size:1.3rem}.menu-toggle{display:grid;place-items:center;margin-left:auto;width:43px;height:43px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--green)}.header-cta{display:none}.main-nav{display:none;order:4;width:100%;padding:6px 0 15px;flex-direction:column;gap:13px}.main-nav.open{display:flex}.hero{padding:50px 0}.hero-layout{grid-template-columns:1fr}.hero h1{font-size:clamp(3rem,13vw,4.35rem)}.hero-copy{font-size:1.04rem}.hero-stats{margin-top:32px}.stat{padding-right:10px}.stat+.stat{padding-left:13px}.hero-art-wrap{min-height:340px;margin:0 10px 0 27px}.hero-art{height:325px}.garden-note{left:-25px;bottom:20px;padding:12px 15px}.shop-section{padding:58px 0 65px}.section-heading{align-items:flex-start;flex-direction:column;gap:7px}.catalog-layout{grid-template-columns:1fr;gap:16px}.category-panel{padding:13px;border-radius:14px}.category-title{margin-bottom:9px}.category-list{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;scrollbar-width:thin}.category-button{width:auto;min-width:max-content;min-height:39px;justify-content:center;gap:8px;padding:0 13px;border:1px solid var(--line);border-radius:999px;background:white;font-size:.86rem}.category-button.active{border-color:var(--green)}.catalog-toolbar{grid-template-columns:minmax(0,1fr) auto;gap:9px}.sort-wrap{gap:0}.sort-wrap span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.sort-select{min-width:0;width:145px;height:46px;padding:0 25px 0 10px;font-size:.82rem}.search-input{height:46px}.catalog-meta{min-height:30px}.product-grid{gap:23px 13px}.product-image{border-radius:15px}.category-label{top:9px;left:8px;padding:5px 7px;font-size:.55rem}.stock-label{top:9px;right:7px;padding:5px 6px;font-size:.59rem}.product-info{padding-top:10px}.product-title-row{align-items:flex-start;flex-direction:column;gap:3px}.product-title{font-size:1.08rem}.product-price{font-size:.92rem}.product-status{font-size:.74rem}.promise-section{padding:55px 0}.promise-list{grid-template-columns:1fr}.promise-item{min-height:0}.promise-item svg{margin-bottom:6px}.about-section{padding:55px 0}.about-card{grid-template-columns:1fr;gap:22px}.about-emblem{min-height:140px}.about-emblem svg{width:68px}.footer-main{grid-template-columns:1fr 1fr;gap:28px 18px}.footer-brand{grid-column:1/-1}.footer-bottom{flex-direction:column}.modal-card{max-width:440px;grid-template-columns:1fr;max-height:90vh;overflow-y:auto}.modal-art{min-height:220px}.modal-content{padding:25px 23px 28px}}
+    @media(max-width:380px){.product-grid{gap:21px 10px}.product-title{font-size:1rem}.catalog-toolbar{grid-template-columns:1fr}.sort-wrap span{position:static;width:auto;height:auto;overflow:visible;clip:auto;margin-right:8px}.sort-wrap{justify-content:flex-end}.sort-select{flex:1;width:auto}.hero-actions .button{padding-inline:15px;font-size:.9rem}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="Gardeneca Home homepage">
-        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M19.5 4.5C11 4.5 5 7.5 5 14c0 3 2 5 5 5 6.5 0 9.5-6 9.5-14.5Z" stroke="currentColor" stroke-width="1.7"/><path d="M4 20c3-5 7-8 12-11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-        <span><span class="brand-name">Gardeneca</span><span class="brand-sub">Home</span></span>
-      </a>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-      <nav class="main-nav" id="mainNav" aria-label="Main navigation"><a href="#shop">Shop</a><a href="#promise">Why Gardeneca</a><a href="#about">Our story</a><a href="#contact">Contact</a></nav>
-      <a class="button header-cta" href="https://wa.me/917510221577" target="_blank" rel="noopener noreferrer">Order on WhatsApp <span aria-hidden="true">↗</span></a>
-    </div>
-  </header>
-
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="#home" aria-label="Gardeneca Home homepage"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M19.5 4.5C11 4.5 5 7.5 5 14c0 3 2 5 5 5 6.5 0 9.5-6 9.5-14.5Z" stroke="currentColor" stroke-width="1.7"/><path d="M4 20c3-5 7-8 12-11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span><span class="brand-name">Gardeneca</span><span class="brand-sub">Home</span></span></a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation"><a href="#shop">Shop</a><a href="#promise">Why Gardeneca</a><a href="#about">Our story</a><a href="#contact">Contact</a></nav>
+    <a class="button header-cta" href="https://wa.me/917510221577" target="_blank" rel="noopener noreferrer">Order on WhatsApp <span aria-hidden="true">↗</span></a>
+  </div></header>
   <main id="home">
-    <section class="hero" aria-labelledby="heroTitle">
-      <div class="container hero-layout">
-        <div class="hero-text">
-          <span class="eyebrow">A little green makes a home</span>
-          <h1 id="heroTitle">Bring the garden <em>home.</em></h1>
-          <p class="hero-copy">Healthy plants, beautiful pots and trusted garden essentials—lovingly chosen for the spaces where life happens.</p>
-          <div class="hero-actions"><a class="button" href="#shop">Explore the collection <span aria-hidden="true">→</span></a><a class="button button-outline" href="https://wa.me/917510221577" target="_blank" rel="noopener noreferrer">Chat with us</a></div>
-          <div class="hero-stats" aria-label="Collection summary"><div class="stat"><span class="stat-number" id="plantCount">03</span><span class="stat-label">Plants</span></div><div class="stat"><span class="stat-number" id="potCount">02</span><span class="stat-label">Pots</span></div><div class="stat"><span class="stat-number" id="fertilizerCount">02</span><span class="stat-label">Garden care</span></div></div>
-        </div>
-        <div class="hero-art-wrap" aria-label="Illustration of a potted plant in a sunlit garden">
-          <div class="hero-art"><div class="sun"></div><svg class="hero-plant" viewBox="0 0 360 390" fill="none" aria-hidden="true"><g stroke="#f8f3e8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M174 237c-9-67-18-129-7-183 24 38 29 112 27 183M205 237c5-89 16-163 46-210 9 59-4 139-22 210M153 241c-32-53-66-91-111-113 8 52 47 97 90 127M222 245c23-58 52-103 91-137-1 48-31 105-73 150"/><path d="M178 239c-3-39 1-71 11-95M207 237c2-48 12-88 28-119M146 253c-25-38-48-60-75-77M231 250c18-33 38-59 61-78" opacity=".55"/></g><path d="M105 250h170l-21 117H126l-21-117Z" fill="#b86b49" stroke="#f8f3e8" stroke-width="5" stroke-linejoin="round"/><path d="M92 235h196v24H92z" fill="#c77c55" stroke="#f8f3e8" stroke-width="5" stroke-linejoin="round"/></svg></div>
-          <div class="garden-note"><span class="note-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11 12 4l8 7v9H4z"/><path d="M9 15c2-3 4-4 7-4-1 4-3 6-7 6"/></svg></span><span><strong>From our family garden</strong><span>to your home</span></span></div>
+    <section class="hero"><div class="container hero-layout"><div>
+      <span class="eyebrow">A little green makes a home</span><h1>Bring the garden <em>home.</em></h1><p class="hero-copy">Healthy plants, beautiful pots and trusted garden essentials—lovingly chosen for the spaces where life happens.</p>
+      <div class="hero-actions"><a class="button" href="#shop">Explore the collection <span aria-hidden="true">→</span></a><a class="button button-outline" href="https://wa.me/917510221577" target="_blank" rel="noopener noreferrer">Chat with us</a></div>
+      <div class="hero-stats" aria-label="Collection summary"><div class="stat"><span class="stat-number" id="plantCount">03</span><span class="stat-label">Plants</span></div><div class="stat"><span class="stat-number" id="potCount">02</span><span class="stat-label">Pots</span></div><div class="stat"><span class="stat-number" id="fertilizerCount">02</span><span class="stat-label">Garden care</span></div></div>
+    </div><div class="hero-art-wrap" aria-label="Illustration of a potted plant in a sunlit garden"><div class="hero-art"><div class="sun"></div><svg class="hero-plant" viewBox="0 0 360 390" fill="none" aria-hidden="true"><g stroke="#f8f3e8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M174 237c-9-67-18-129-7-183 24 38 29 112 27 183M205 237c5-89 16-163 46-210 9 59-4 139-22 210M153 241c-32-53-66-91-111-113 8 52 47 97 90 127M222 245c23-58 52-103 91-137-1 48-31 105-73 150"/><path d="M178 239c-3-39 1-71 11-95M207 237c2-48 12-88 28-119M146 253c-25-38-48-60-75-77M231 250c18-33 38-59 61-78" opacity=".55"/></g><path d="M105 250h170l-21 117H126l-21-117Z" fill="#b86b49" stroke="#f8f3e8" stroke-width="5"/><path d="M92 235h196v24H92z" fill="#c77c55" stroke="#f8f3e8" stroke-width="5"/></svg></div><div class="garden-note"><span class="note-icon" aria-hidden="true">⌂</span><span><strong>From our family garden</strong><span>to your home</span></span></div></div></div></section>
+    <section class="shop-section" id="shop"><div class="container">
+      <div class="section-heading"><div><span class="eyebrow">Thoughtfully picked for you</span><h2>Find your next green friend</h2></div><p>Browse our little collection of plants and garden essentials. Choose a category, search, or sort to find what you need.</p></div>
+      <div class="catalog-layout">
+        <aside class="category-panel" aria-label="Product categories"><h3 class="category-title">Shop by category</h3><div class="category-list" id="categories"></div></aside>
+        <div class="catalog-main"><div class="catalog-toolbar"><label class="search-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4"/></svg><input class="search-input" id="search" type="search" placeholder="Search plants and garden items" aria-label="Search products"></label><label class="sort-wrap"><span>Sort by</span><select class="sort-select" id="sort" aria-label="Sort products"><option value="featured">Featured</option><option value="name">Name: A to Z</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option></select></label></div>
+          <div class="catalog-meta"><p class="result-count" id="resultCount" aria-live="polite"></p><span class="active-category" id="activeCategory">All products</span></div><div class="product-grid" id="productGrid" aria-live="polite"></div>
         </div>
       </div>
-    </section>
-
-    <section class="shop-section" id="shop" aria-labelledby="shopTitle">
-      <div class="container">
-        <div class="section-heading"><div><span class="eyebrow">Thoughtfully picked for you</span><h2 id="shopTitle">Find your next green friend</h2></div><p>Browse our little collection of plants and garden essentials. Tap any item to learn more or order directly.</p></div>
-        <div class="catalog-controls"><div class="filters" id="filters" aria-label="Filter by category"></div><div class="catalog-tools"><label class="search-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4"/></svg><input class="search-input" id="search" type="search" placeholder="Search the collection" aria-label="Search products"></label><label><span class="sr-only" style="position:absolute;left:-10000px">Sort products</span><select class="sort-select" id="sort"><option value="featured">Featured</option><option value="name">Name: A to Z</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option></select></label></div></div>
-        <p class="result-line" id="resultCount" aria-live="polite"></p>
-        <div class="product-grid" id="productGrid" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <section class="promise-section" id="promise">
-      <div class="container promise-layout"><div><span class="eyebrow">The Gardeneca difference</span><h2>Good things grow with a little care.</h2><p>We believe bringing plants home should feel welcoming and easy. Choose something you love, and we’ll help you get started.</p></div><div class="promise-list"><div class="promise-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s8-4 8-11V5l-8-3-8 3v5c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg><strong>Carefully chosen</strong><span>Plants and essentials selected with love.</span></div><div class="promise-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 11.5c0 5-8 10-8 10s-8-5-8-10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="11" r="2.5"/></svg><strong>Local and personal</strong><span>A family garden, shared with your home.</span></div><div class="promise-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 20l1-4.5a8 8 0 1 1 17-4Z"/><path d="M8 11h8M8 14h5"/></svg><strong>Here to help</strong><span>Message us for product and care questions.</span></div></div></div>
-    </section>
-
+    </div></section>
+    <section class="promise-section" id="promise"><div class="container promise-layout"><div><span class="eyebrow">The Gardeneca difference</span><h2>Good things grow with a little care.</h2><p>We believe bringing plants home should feel welcoming and easy. Choose something you love, and we’ll help you get started.</p></div><div class="promise-list"><div class="promise-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s8-4 8-11V5l-8-3-8 3v5c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg><strong>Carefully chosen</strong><span>Plants and essentials selected with love.</span></div><div class="promise-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 11.5c0 5-8 10-8 10s-8-5-8-10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="11" r="2.5"/></svg><strong>Local and personal</strong><span>A family garden, shared with your home.</span></div><div class="promise-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 20l1-4.5a8 8 0 1 1 17-4Z"/><path d="M8 11h8M8 14h5"/></svg><strong>Here to help</strong><span>Message us for product and care questions.</span></div></div></div></section>
     <section class="about-section" id="about"><div class="container about-card"><div class="about-emblem" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M50 55c-2-20-4-34 2-47 8 12 8 30 6 47M48 54C36 38 26 31 14 29c3 15 14 27 30 34M59 55c9-16 20-25 34-29-2 15-12 27-29 36"/><path d="M29 61h43l-5 29H34l-5-29Z"/><path d="M26 57h49v8H26z"/></svg></div><div class="about-copy"><span class="eyebrow">Rooted in family</span><h2>A small garden with a lot of heart.</h2><p>Gardeneca Home began in our own family garden. Today, we share the plants we love and the pots and garden care that help them thrive. Every order means a little piece of that garden finds a new home.</p></div></div></section>
   </main>
-
-  <footer class="site-footer" id="contact"><div class="container"><div class="footer-main"><div class="footer-brand"><a class="brand" href="#home"><span class="brand-mark" style="background:var(--clay)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M19.5 4.5C11 4.5 5 7.5 5 14c0 3 2 5 5 5 6.5 0 9.5-6 9.5-14.5Z" stroke="currentColor" stroke-width="1.7"/><path d="M4 20c3-5 7-8 12-11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span><span class="brand-name">Gardeneca</span><span class="brand-sub">Home</span></span></a><p class="footer-tagline">Plants, pots and garden essentials, grown and shared with love.</p></div><div><h2 class="footer-heading">Get in touch</h2><div class="footer-links"><a href="https://wa.me/917510221577" target="_blank" rel="noopener noreferrer">WhatsApp: +91 75102 21577</a><a href="mailto:naturegardeneca@gmail.com">naturegardeneca@gmail.com</a></div></div><div><h2 class="footer-heading">Explore</h2><div class="footer-links"><a href="#shop">Shop the collection</a><a href="#promise">Why Gardeneca</a><a href="#about">Our story</a></div></div></div><div class="footer-bottom"><p>© <span id="year"></span> Gardeneca Home. Made with care.</p><p>Questions? <a href="https://wa.me/917510221577" target="_blank" rel="noopener noreferrer">We’re happy to help.</a></p></div></div></footer>
-
-  <a class="whatsapp-float" href="https://wa.me/917510221577" target="_blank" rel="noopener noreferrer" aria-label="Chat with Gardeneca Home on WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 20l1-4.5a8 8 0 1 1 17-4Z"/><path d="M8.2 8.4c.3-.6.7-.6 1-.6h.4c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.6.7c-.2.2-.2.4 0 .6.6 1 1.5 1.8 2.5 2.3.2.1.4.1.6-.1l.8-.9c.2-.2.4-.2.7-.1l1.5.7c.3.1.4.3.4.5 0 .3-.2 1.2-.7 1.6-.5.5-1.1.7-1.8.6-.7-.1-1.6-.4-2.7-1-1.2-.7-2.2-1.7-3-2.8-.7-1-1.1-2-1.1-2.7 0-.6.3-1.2.7-1.6Z"/></svg></a>
-
+  <footer class="site-footer" id="contact"><div class="container"><div class="footer-main"><div class="footer-brand"><a class="brand" href="#home"><span class="brand-mark" style="background:var(--clay)" aria-hidden="true">❧</span><span><span class="brand-name">Gardeneca</span><span class="brand-sub">Home</span></span></a><p class="footer-tagline">Plants, pots and garden essentials, grown and shared with love.</p></div><div><h2 class="footer-heading">Get in touch</h2><div class="footer-links"><a href="https://wa.me/917510221577" target="_blank" rel="noopener noreferrer">WhatsApp: +91 75102 21577</a><a href="mailto:naturegardeneca@gmail.com">naturegardeneca@gmail.com</a></div></div><div><h2 class="footer-heading">Explore</h2><div class="footer-links"><a href="#shop">Shop the collection</a><a href="#promise">Why Gardeneca</a><a href="#about">Our story</a></div></div></div><div class="footer-bottom"><p>© <span id="year"></span> Gardeneca Home. Made with care.</p><p>Questions? <a href="https://wa.me/917510221577" target="_blank" rel="noopener noreferrer">We’re happy to help.</a></p></div></div></footer>
+  <a class="whatsapp-float" href="https://wa.me/917510221577" target="_blank" rel="noopener noreferrer" aria-label="Chat with Gardeneca Home on WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 20l1-4.5a8 8 0 1 1 17-4Z"/><path d="M8.2 8.4c.3-.6.7-.6 1-.6h.4c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.6.7c-.2.2-.2.4 0 .6.6 1 1.5 1.8 2.5 2.3.2.1.4.1.6-.1l.8-.9c.2-.2.4-.2.7-.1l1.5.7"/></svg></a>
   <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalName" aria-hidden="true"><div class="modal-card" id="modalCard"></div></div>
-
   <script>
-    const WHATSAPP = "917510221577";
-    const products = [
-      { id: 1, name: "Adenium (Desert Rose)", category: "Plants", price: 350, inStock: true, care: "Give it plenty of bright sunlight. Water only when the soil is completely dry.", art: "flower", tone: "sage" },
-      { id: 2, name: "Money Plant", category: "Plants", price: 120, inStock: true, care: "Enjoys bright, indirect light. Water when the top layer of soil feels dry.", art: "trailing", tone: "sage" },
-      { id: 3, name: "Snake Plant", category: "Plants", price: 250, inStock: false, care: "A forgiving plant for bright or low light. Let the soil dry before watering.", art: "snake", tone: "sage" },
-      { id: 4, name: "Ceramic Pot – White", category: "Pots", price: 299, inStock: true, care: "A medium ceramic planter with a drainage hole, ready for your favourite plant.", art: "pot", tone: "clay" },
-      { id: 5, name: "Hanging Planter", category: "Pots", price: 180, inStock: true, care: "Includes a rope and hook. A lovely way to add greenery at eye level.", art: "hanger", tone: "clay" },
-      { id: 6, name: "Organic Compost 1kg", category: "Fertilizers", price: 90, inStock: true, care: "Mix a handful into the soil once a month to support healthy growth.", art: "compost", tone: "sand" },
-      { id: 7, name: "Bloom Booster", category: "Fertilizers", price: 160, inStock: true, care: "Follow the label directions and dilute before use. Suitable for flowering plants.", art: "bottle", tone: "sand" }
+    const WHATSAPP='917510221577';
+    const products=[
+      {id:1,name:'Adenium (Desert Rose)',category:'Plants',price:350,inStock:true,care:'Give it plenty of bright sunlight. Water only when the soil is completely dry.',art:'flower',tone:'sage'},
+      {id:2,name:'Money Plant',category:'Plants',price:120,inStock:true,care:'Enjoys bright, indirect light. Water when the top layer of soil feels dry.',art:'trailing',tone:'sage'},
+      {id:3,name:'Snake Plant',category:'Plants',price:250,inStock:false,care:'A forgiving plant for bright or low light. Let the soil dry before watering.',art:'snake',tone:'sage'},
+      {id:4,name:'Ceramic Pot – White',category:'Pots',price:299,inStock:true,care:'A medium ceramic planter with a drainage hole, ready for your favourite plant.',art:'pot',tone:'clay'},
+      {id:5,name:'Hanging Planter',category:'Pots',price:180,inStock:true,care:'Includes a rope and hook. A lovely way to add greenery at eye level.',art:'hanger',tone:'clay'},
+      {id:6,name:'Organic Compost 1kg',category:'Fertilizers',price:90,inStock:true,care:'Mix a handful into the soil once a month to support healthy growth.',art:'compost',tone:'sand'},
+      {id:7,name:'Bloom Booster',category:'Fertilizers',price:160,inStock:true,care:'Follow the label directions and dilute before use. Suitable for flowering plants.',art:'bottle',tone:'sand'}
     ];
-
-    const artSvg = {
-      flower: `<svg viewBox="0 0 240 240" fill="none" aria-hidden="true"><g stroke="#214436" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M111 153c-6-38-4-63 2-91M129 153c6-40 19-64 38-81M104 139c-21-25-39-39-60-44 3 24 19 43 47 57"/><path d="M65 204h111l-13-56H78l-13 56Z" fill="#f2d9c7"/><path d="M59 143h123v16H59z" fill="#d5a78b"/><path d="M105 81c-15-16-2-34 7-23 4-19 24-16 21 2 17-7 25 11 8 19 12 14-4 27-14 12-9 17-28 9-17-7-17 1-24-15-5-22Z" fill="#cc7952"/><circle cx="121" cy="80" r="8" fill="#f1d8ae"/><path d="M154 90c-9-10-1-21 5-14 3-13 16-11 14 1 11-5 16 7 5 12 8 9-3 18-9 8-6 11-18 6-11-5-11 0-16-9-4-15Z" fill="#cc7952"/><circle cx="164" cy="89" r="5" fill="#f1d8ae"/></g></svg>`,
-      trailing: `<svg viewBox="0 0 240 240" fill="none" aria-hidden="true"><g stroke="#214436" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M119 150c-7-30-10-54-4-84M126 151c12-37 27-58 52-74M111 145c-17-22-31-34-49-39M133 143c19 4 33 12 48 27M116 117c-7-20-22-33-40-39M130 112c1-21 11-38 28-53"/><path d="M100 149c-20 1-29-14-23-26 7-12 21-7 24 4 9-10 22-4 19 7-3 11-10 15-20 15ZM73 94c-16 4-25-8-20-19 5-10 18-8 21 2 8-8 19-3 17 7-2 9-8 12-18 10ZM163 68c-13 7-24-2-22-13 2-11 15-13 20-4 5-10 17-9 19 1 1 10-5 15-17 16ZM175 174c-14 6-23-4-19-15 4-10 17-10 21 0 6-9 18-6 18 5 0 9-7 13-20 10Z" fill="#dbe5d3"/><path d="M67 204h111l-13-56H80l-13 56Z" fill="#f2d9c7"/><path d="M61 143h123v16H61z" fill="#d5a78b"/></g></svg>`,
-      snake: `<svg viewBox="0 0 240 240" fill="none" aria-hidden="true"><g stroke="#214436" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M93 151c-13-45-18-79-9-119 23 25 31 68 27 119M119 151c-6-56-4-97 11-135 16 37 17 82 8 135M144 151c7-41 19-73 44-103 2 38-11 77-34 111M67 151c-15-27-29-45-50-59 3 28 17 50 42 68"/><path d="M68 204h110l-13-56H81l-13 56Z" fill="#f2d9c7"/><path d="M61 143h123v16H61z" fill="#d5a78b"/><path d="M99 117c3-19 4-37 1-55M126 119c-2-25-1-46 4-68M151 132c7-21 15-39 28-55" opacity=".55"/></g></svg>`,
-      pot: `<svg viewBox="0 0 240 240" fill="none" aria-hidden="true"><g stroke="#214436" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M69 94h102l-12 96H82L69 94Z" fill="#f6e8d9"/><path d="M61 80h118v20H61z" fill="#d7c6b3"/><path d="M79 125h82M82 150h76" stroke="#9caa9e"/><path d="M58 195c22 9 105 10 126 0"/></g></svg>`,
-      hanger: `<svg viewBox="0 0 240 240" fill="none" aria-hidden="true"><g stroke="#214436" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="120" cy="38" r="9"/><path d="m120 47-55 94M120 47l55 94M120 47v94"/><path d="M52 139h136c-7 41-29 61-68 61s-61-20-68-61Z" fill="#f4e1d2"/><path d="M120 139c-4-24-2-42 6-58M107 132c-13-17-25-26-41-29 2 19 13 32 34 39M134 130c10-18 21-28 37-34 0 18-10 33-29 43"/><ellipse cx="68" cy="209" rx="8" ry="13"/><path d="M68 200v-13M172 209c-5 12-13 14-17 5-4-8 2-17 10-15 5-1 10 3 7 10Z"/></g></svg>`,
-      compost: `<svg viewBox="0 0 240 240" fill="none" aria-hidden="true"><g stroke="#214436" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M75 53h90l11 142H64L75 53Z" fill="#f4efe3"/><path d="m75 53 8-18h74l8 18"/><circle cx="120" cy="111" r="29"/><path d="M106 119c12-19 23-25 34-26-2 16-11 28-31 34M109 127l25-31"/><path d="M86 164h68" stroke="#9ba99b"/></g></svg>`,
-      bottle: `<svg viewBox="0 0 240 240" fill="none" aria-hidden="true"><g stroke="#214436" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M103 35h34v27l21 24v107H82V86l21-24V35Z" fill="#f4efe3"/><path d="M103 49h34M84 91h72"/><rect x="96" y="111" width="48" height="53" rx="5"/><path d="M120 152c-12-9-4-18 1-13 3-10 12-8 11 1 9-3 12 6 4 10 5 7-3 13-8 6-5 8-13 4-8-4Z" stroke="#b86b49"/><circle cx="121" cy="145" r="3" stroke="#b86b49"/></g></svg>`
+    const illustrations={
+      flower:`<svg viewBox="0 0 240 240" fill="none" aria-hidden="true"><g stroke="#214436" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M111 153c-6-38-4-63 2-91M129 153c6-40 19-64 38-81M104 139c-21-25-39-39-60-44 3 24 19 43 47 57"/><path d="M65 204h111l-13-56H78l-13 56Z" fill="#f2d9c7"/><path d="M59 143h123v16H59z" fill="#d5a78b"/><path d="M105 81c-15-16-2-34 7-23 4-19 24-16 21 2 17-7 25 11 8 19 12 14-4 27-14 12-9 17-28 9-17-7-17 1-24-15-5-22Z" fill="#cc7952"/><circle cx="121" cy="80" r="8" fill="#f1d8ae"/></g></svg>`,
+      trailing:`<svg viewBox="0 0 240 240" fill="none" aria-hidden="true"><g stroke="#214436" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M119 150c-7-30-10-54-4-84M126 151c12-37 27-58 52-74M111 145c-17-22-31-34-49-39M133 143c19 4 33 12 48 27M116 117c-7-20-22-33-40-39M130 112c1-21 11-38 28-53"/><path d="M100 149c-20 1-29-14-23-26 7-12 21-7 24 4 9-10 22-4 19 7-3 11-10 15-20 15ZM73 94c-16 4-25-8-20-19 5-10 18-8 21 2 8-8 19-3 17 7-2 9-8 12-18 10ZM163 68c-13 7-24-2-22-13 2-11 15-13 20-4 5-10 17-9 19 1 1 10-5 15-17 16Z" fill="#dbe5d3"/><path d="M68 204h110l-13-56H81l-13 56Z" fill="#f2d9c7"/><path d="M61 143h123v16H61z" fill="#d5a78b"/></g></svg>`,
+      snake:`<svg viewBox="0 0 240 240" fill="none" aria-hidden="true"><g stroke="#214436" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M93 151c-13-45-18-79-9-119 23 25 31 68 27 119M119 151c-6-56-4-97 11-135 16 37 17 82 8 135M144 151c7-41 19-73 44-103 2 38-11 77-34 111M67 151c-15-27-29-45-50-59 3 28 17 50 42 68"/><path d="M68 204h110l-13-56H81l-13 56Z" fill="#f2d9c7"/><path d="M61 143h123v16H61z" fill="#d5a78b"/></g></svg>`,
+      pot:`<svg viewBox="0 0 240 240" fill="none" aria-hidden="true"><g stroke="#214436" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M69 94h102l-12 96H82L69 94Z" fill="#f6e8d9"/><path d="M61 80h118v20H61z" fill="#d7c6b3"/><path d="M79 125h82M82 150h76" stroke="#9caa9e"/><path d="M58 195c22 9 105 10 126 0"/></g></svg>`,
+      hanger:`<svg viewBox="0 0 240 240" fill="none" aria-hidden="true"><g stroke="#214436" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="120" cy="38" r="9"/><path d="m120 47-55 94M120 47l55 94M120 47v94"/><path d="M52 139h136c-7 41-29 61-68 61s-61-20-68-61Z" fill="#f4e1d2"/><path d="M120 139c-4-24-2-42 6-58M107 132c-13-17-25-26-41-29 2 19 13 32 34 39M134 130c10-18 21-28 37-34 0 18-10 33-29 43"/></g></svg>`,
+      compost:`<svg viewBox="0 0 240 240" fill="none" aria-hidden="true"><g stroke="#214436" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M75 53h90l11 142H64L75 53Z" fill="#f4efe3"/><path d="m75 53 8-18h74l8 18"/><circle cx="120" cy="111" r="29"/><path d="M106 119c12-19 23-25 34-26-2 16-11 28-31 34M109 127l25-31"/><path d="M86 164h68" stroke="#9ba99b"/></g></svg>`,
+      bottle:`<svg viewBox="0 0 240 240" fill="none" aria-hidden="true"><g stroke="#214436" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M103 35h34v27l21 24v107H82V86l21-24V35Z" fill="#f4efe3"/><path d="M103 49h34M84 91h72"/><rect x="96" y="111" width="48" height="53" rx="5"/><path d="M120 152c-12-9-4-18 1-13 3-10 12-8 11 1 9-3 12 6 4 10 5 7-3 13-8 6-5 8-13 4-8-4Z" stroke="#b86b49"/></g></svg>`
     };
-
-    const filters = document.getElementById("filters");
-    const grid = document.getElementById("productGrid");
-    const searchInput = document.getElementById("search");
-    const sortSelect = document.getElementById("sort");
-    const modal = document.getElementById("productModal");
-    let selectedCategory = "All";
-    let lastFocusedElement = null;
-
-    function updateSummary() {
-      const count = category => products.filter(product => product.category === category).length;
-      document.getElementById("plantCount").textContent = String(count("Plants")).padStart(2, "0");
-      document.getElementById("potCount").textContent = String(count("Pots")).padStart(2, "0");
-      document.getElementById("fertilizerCount").textContent = String(count("Fertilizers")).padStart(2, "0");
-    }
-
-    function renderFilters() {
-      const categories = ["All", "Plants", "Pots", "Fertilizers"];
-      filters.replaceChildren();
-      categories.forEach(category => {
-        const count = category === "All" ? products.length : products.filter(item => item.category === category).length;
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = `filter-chip${selectedCategory === category ? " active" : ""}`;
-        button.setAttribute("aria-pressed", String(selectedCategory === category));
-        button.innerHTML = `${category}<small>${count}</small>`;
-        button.addEventListener("click", () => { selectedCategory = category; renderFilters(); renderProducts(); });
-        filters.appendChild(button);
-      });
-    }
-
-    function renderProducts() {
-      const query = searchInput.value.trim().toLowerCase();
-      let visible = products.filter(product => {
-        const categoryMatches = selectedCategory === "All" || product.category === selectedCategory;
-        const searchMatches = `${product.name} ${product.category} ${product.care}`.toLowerCase().includes(query);
-        return categoryMatches && searchMatches;
-      });
-      if (sortSelect.value === "name") visible.sort((a, b) => a.name.localeCompare(b.name));
-      if (sortSelect.value === "price-low") visible.sort((a, b) => a.price - b.price);
-      if (sortSelect.value === "price-high") visible.sort((a, b) => b.price - a.price);
-      document.getElementById("resultCount").textContent = `${visible.length} ${visible.length === 1 ? "item" : "items"} in our collection`;
-      grid.replaceChildren();
-      if (!visible.length) {
-        grid.innerHTML = '<div class="empty-state"><strong>No products found</strong>Try another search or choose a different category.</div>';
-        return;
-      }
-      visible.forEach(product => {
-        const card = document.createElement("article");
-        card.className = "product-card";
-        card.tabIndex = 0;
-        card.setAttribute("role", "button");
-        card.setAttribute("aria-label", `View details for ${product.name}`);
-        card.innerHTML = `<div class="product-image tone-${product.tone}"><span class="category-label">${product.category}</span><span class="stock-label${product.inStock ? "" : " unavailable"}">${product.inStock ? "In stock" : "Out of stock"}</span>${artSvg[product.art]}</div><div class="product-info"><div class="product-title-row"><h3 class="product-title">${product.name}</h3><span class="product-price">₹${product.price}</span></div><p class="product-status${product.inStock ? "" : " unavailable"}"><span class="status-dot"></span>${product.inStock ? "Ready for a new home" : "Currently unavailable"}</p></div>`;
-        card.addEventListener("click", () => openProduct(product, card));
-        card.addEventListener("keydown", event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); openProduct(product, card); } });
-        grid.appendChild(card);
-      });
-    }
-
-    function openProduct(product, trigger) {
-      lastFocusedElement = trigger;
-      const message = encodeURIComponent(product.inStock
-        ? `Hi Gardeneca Home, I would like to order: ${product.name} (₹${product.price}).`
-        : `Hi Gardeneca Home, could you please let me know when ${product.name} is available again?`);
-      const actionLabel = product.inStock ? "Order on WhatsApp" : "Ask when it’s available";
-      const card = document.getElementById("modalCard");
-      card.innerHTML = `<button class="modal-close" type="button" aria-label="Close product details">×</button><div class="modal-art tone-${product.tone}">${artSvg[product.art]}</div><div class="modal-content"><span class="modal-category">${product.category}</span><h2 id="modalName">${product.name}</h2><p class="modal-price">₹${product.price}</p><p class="modal-care"><strong>Care & details</strong><br>${product.care}</p><a class="button" href="https://wa.me/${WHATSAPP}?text=${message}" target="_blank" rel="noopener noreferrer">${actionLabel} <span aria-hidden="true">↗</span></a></div>`;
-      modal.classList.add("open");
-      modal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-      card.querySelector(".modal-close").addEventListener("click", closeProduct);
-      card.querySelector(".modal-close").focus();
-    }
-
-    function closeProduct() {
-      modal.classList.remove("open");
-      modal.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-      if (lastFocusedElement) lastFocusedElement.focus();
-    }
-
-    searchInput.addEventListener("input", renderProducts);
-    sortSelect.addEventListener("change", renderProducts);
-    modal.addEventListener("click", event => { if (event.target === modal) closeProduct(); });
-    document.addEventListener("keydown", event => { if (event.key === "Escape" && modal.classList.contains("open")) closeProduct(); });
-    const menuToggle = document.getElementById("menuToggle");
-    const mainNav = document.getElementById("mainNav");
-    menuToggle.addEventListener("click", () => {
-      const isOpen = mainNav.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-    });
-    mainNav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
-      mainNav.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "Open navigation");
-    }));
-    document.getElementById("year").textContent = new Date().getFullYear();
-    updateSummary();
-    renderFilters();
-    renderProducts();
+    const categoriesEl=document.getElementById('categories'),grid=document.getElementById('productGrid'),search=document.getElementById('search'),sort=document.getElementById('sort'),modal=document.getElementById('productModal');let chosen='All',lastFocus=null;
+    function updateSummary(){const count=c=>products.filter(p=>p.category===c).length;document.getElementById('plantCount').textContent=String(count('Plants')).padStart(2,'0');document.getElementById('potCount').textContent=String(count('Pots')).padStart(2,'0');document.getElementById('fertilizerCount').textContent=String(count('Fertilizers')).padStart(2,'0')}
+    function renderCategories(){const choices=['All','Plants','Pots','Fertilizers'];categoriesEl.replaceChildren();choices.forEach(c=>{const amount=c==='All'?products.length:products.filter(p=>p.category===c).length;const b=document.createElement('button');b.type='button';b.className=`category-button${chosen===c?' active':''}`;b.setAttribute('aria-pressed',String(chosen===c));b.innerHTML=`<span>${c==='All'?'All products':c}</span><span class="category-count">${amount}</span>`;b.addEventListener('click',()=>{chosen=c;renderCategories();renderProducts()});categoriesEl.appendChild(b)})}
+    function renderProducts(){let shown=products.filter(p=>(chosen==='All'||p.category===chosen)&&`${p.name} ${p.category} ${p.care}`.toLowerCase().includes(search.value.trim().toLowerCase()));if(sort.value==='name')shown.sort((a,b)=>a.name.localeCompare(b.name));if(sort.value==='price-low')shown.sort((a,b)=>a.price-b.price);if(sort.value==='price-high')shown.sort((a,b)=>b.price-a.price);document.getElementById('resultCount').textContent=`Showing ${shown.length} ${shown.length===1?'item':'items'}`;document.getElementById('activeCategory').textContent=chosen==='All'?'All products':chosen;grid.replaceChildren();if(!shown.length){grid.innerHTML='<div class="empty-state"><strong>No products found</strong>Try a different search or category.</div>';return}shown.forEach(p=>{const card=document.createElement('article');card.className='product-card';card.tabIndex=0;card.setAttribute('role','button');card.setAttribute('aria-label',`View details for ${p.name}`);card.innerHTML=`<div class="product-image tone-${p.tone}"><span class="category-label">${p.category}</span><span class="stock-label${p.inStock?'':' unavailable'}">${p.inStock?'In stock':'Out of stock'}</span>${illustrations[p.art]}</div><div class="product-info"><div class="product-title-row"><h3 class="product-title">${p.name}</h3><span class="product-price">₹${p.price}</span></div><p class="product-status${p.inStock?'':' unavailable'}"><span class="status-dot"></span>${p.inStock?'Ready for a new home':'Currently unavailable'}</p></div>`;card.addEventListener('click',()=>openProduct(p,card));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProduct(p,card)}});grid.appendChild(card)})}
+    function openProduct(p,trigger){lastFocus=trigger;const msg=encodeURIComponent(p.inStock?`Hi Gardeneca Home, I would like to order: ${p.name} (₹${p.price}).`:`Hi Gardeneca Home, could you please let me know when ${p.name} is available again?`);document.getElementById('modalCard').innerHTML=`<button class="modal-close" type="button" aria-label="Close product details">×</button><div class="modal-art tone-${p.tone}">${illustrations[p.art]}</div><div class="modal-content"><span class="modal-category">${p.category}</span><h2 id="modalName">${p.name}</h2><p class="modal-price">₹${p.price}</p><p class="modal-care"><strong>Care &amp; details</strong><br>${p.care}</p><a class="button" href="https://wa.me/${WHATSAPP}?text=${msg}" target="_blank" rel="noopener noreferrer">${p.inStock?'Order on WhatsApp':'Ask when it’s available'} ↗</a></div>`;modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';modal.querySelector('.modal-close').addEventListener('click',closeProduct);modal.querySelector('.modal-close').focus()}
+    function closeProduct(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';if(lastFocus)lastFocus.focus()}
+    search.addEventListener('input',renderProducts);sort.addEventListener('change',renderProducts);modal.addEventListener('click',e=>{if(e.target===modal)closeProduct()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeProduct()});const toggle=document.getElementById('menuToggle'),nav=document.getElementById('mainNav');toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation')});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));document.getElementById('year').textContent=new Date().getFullYear();updateSummary();renderCategories();renderProducts();
   </script>
 </body>
 </html>
